@@ -1,9 +1,9 @@
 # Earn the Tab — The International Ranger School Guide
 
-Official landing page for **Earn the Tab** by **Renee Aluste** (U.S. Army Ranger School Class 07-22, Estonian Defence Forces NCO of the Year, Combat Ready OÜ).
+Official landing page for **Earn the Tab** by **Renee Aluste** (U.S. Army Ranger School Class 07-22, Estonian Defence Forces NCO of the Year).
 
 - **Live domain:** [https://earnthetab.com](https://earnthetab.com)
-- **Author:** Renee Aluste ([combatready.eu](https://www.combatready.eu))
+- **Author:** Renee Aluste (`reneealuste@gmail.com`)
 
 ## Available Editions on Amazon
 
