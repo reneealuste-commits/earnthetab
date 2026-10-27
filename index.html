@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earn the Tab — Ranger School Survival Guide by Renee Aluste</title>
+<meta name="description" content="The only U.S. Army Ranger School survival guide written by a non-American graduate (Renee Aluste, Class 07-22). 62 days. 3 phases. 150 pages of field intel.">
+<link rel="canonical" href="https://earnthetab.com/">
+
+<!-- OpenGraph / Social Preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://earnthetab.com/">
+<meta property="og:title" content="Earn the Tab — Ranger School Survival Guide">
+<meta property="og:description" content="The only Ranger School survival guide written by a non-American graduate. 62 days. 3 phases. One decision that changes everything.">
+<meta property="og:image" content="https://earnthetab.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Earn the Tab — Ranger School Survival Guide">
+<meta name="twitter:description" content="The only Ranger School survival guide written by a non-American graduate. 62 days. 3 phases. One decision that changes everything.">
+<meta name="twitter:image" content="https://earnthetab.com/og-image.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy2: #0F1F3D;
+    --gold: #C8A84B;
+    --gold-light: #E8C96A;
+    --white: #F5F2EC;
+    --gray: #8A8A8A;
+    --red: #8B1A1A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(10,22,40,0.95), transparent);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--gold);
+  }
+
+  .nav-tagline {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 70% 50%, rgba(200,168,75,0.06) 0%, transparent 70%),
+      linear-gradient(135deg, var(--navy) 0%, #0F1F3D 100%);
+  }
+
+  /* Diagonal gold line */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 30%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    opacity: 0.15;
+  }
+
+  .hero-left {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 60px 80px 80px;
+  }
+
+  .hero-kicker {
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-kicker::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(64px, 8vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(245,242,236,0.6);
+    margin-bottom: 48px;
+    line-height: 1.5;
+    max-width: 420px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 36px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  /* ── CTA BUTTON ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    letter-spacing: 3px;
+    padding: 18px 36px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+    align-self: flex-start;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+
+  .btn-primary:hover::after { transform: translateX(0); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,168,75,0.3); }
+
+  .btn-arrow { font-size: 20px; }
+
+  /* ── HERO RIGHT (Book + Language Carousel) ── */
+  .hero-right {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 60px 80px 20px;
+    gap: 36px;
+  }
+
+  /* ── LANGUAGE CAROUSEL ── */
+  .carousel-wrapper {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .carousel-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .carousel-track-outer {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .language-card {
+    min-width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,168,75,0.2);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: border-color 0.3s;
+    position: relative;
+  }
+
+  .language-card.active {
+    border-color: rgba(200,168,75,0.5);
+    background: rgba(200,168,75,0.05);
+  }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .carousel-btn {
+    width: 40px; height: 40px;
+    background: transparent;
+    border: 1px solid rgba(200,168,75,0.3);
+    color: var(--gold);
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .carousel-btn:hover {
+    background: rgba(200,168,75,0.1);
+    border-color: var(--gold);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 6px; height: 6px;
+    background: rgba(200,168,75,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .dot.active {
+    background: var(--gold);
+    width: 20px;
+    border-radius: 3px;
+  }
+
+  /* ── FLAG ROW ── */
+  .flag-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .flag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    opacity: 0.45;
+    transition: opacity 0.2s, transform 0.2s;
+    position: relative;
+  }
+
+  .flag-item:hover { opacity: 0.9; transform: scale(1.15); }
+  .flag-item.active { opacity: 1; }
+
+  .flag-item span.flag-emoji {
+    display: block;
+    width: 32px;
+    height: 22px;
+  }
+
+  .flag-item span.flag-emoji img {
+    width: 32px;
+    height: 22px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .flag-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(138,138,138,0.4);
+  }
+
+  .flag-item.avail .flag-dot { background: #4CAF50; }
+
+  .lang-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .lang-flag {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .lang-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .lang-name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+  }
+
+  .lang-title {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(245,242,236,0.65);
+  }
+
+  .lang-formats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  .lang-format-link {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,168,75,0.35);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .lang-format-link:hover {
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+  }
+
+  .lang-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .status-badge {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid;
+  }
+
+  .status-badge.available {
+    color: #4CAF50;
+    border-color: rgba(76,175,80,0.4);
+    background: rgba(76,175,80,0.08);
+  }
+
+  .status-badge.coming {
+    color: var(--gray);
+    border-color: rgba(138,138,138,0.3);
+  }
+
+  .lang-buy-btn {
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .lang-buy-btn:hover {
+    background: var(--gold-light);
+  }
+
+  .lang-buy-btn.disabled {
+    background: rgba(138,138,138,0.2);
+    color: var(--gray);
+    cursor: not-allowed;
+  }
+
+  .book-display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-cover-wrap {
+    align-self: center;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.4s;
+    box-shadow: 12px 16px 50px rgba(0,0,0,0.6), inset -2px 0 8px rgba(0,0,0,0.4);
+  }
+
+  .book-cover-wrap:hover {
+    transform: scale(1.03);
+  }
+
+  .book-cover-wrap img {
+    display: block;
+    width: 200px;
+    height: auto;
+    aspect-ratio: 5 / 8;
+    object-fit: cover;
+  }
+
+  /* ── CREDENTIAL STRIP ── */
+  .credential-strip {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 440px;
+  }
+
+  .cred-tag {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid rgba(200,168,75,0.25);
+    color: rgba(245,242,236,0.5);
+  }
+
+  /* ── SECTION: WHY ── */
+  .section-why {
+    padding: 100px 80px;
+    background: var(--navy2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-why::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    opacity: 0.3;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(36px, 4vw, 56px);
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    max-width: 600px;
+    line-height: 1.05;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .why-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(200,168,75,0.1);
+    padding: 40px 32px;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .why-card:hover {
+    background: rgba(200,168,75,0.04);
+    border-color: rgba(200,168,75,0.3);
+    transform: translateY(-4px);
+  }
+
+  .why-num {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 48px;
+    color: rgba(200,168,75,0.15);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .why-heading {
+    font-family: 'Crimson Pro', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .why-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245,242,236,0.55);
+  }
+
+  /* ── QUOTE SECTION ── */
+  .section-quote {
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-quote::before {
+    content: '"';
+    position: absolute;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 400px;
+    color: rgba(200,168,75,0.03);
+    line-height: 1;
+    top: -80px;
+    left: 40px;
+    pointer-events: none;
+  }
+
+  .quote-rule {
+    width: 4px;
+    height: 120px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .quote-text {
+    font-family: 'Crimson Pro', serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  .quote-attr {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── AUTHOR SECTION ── */
+  .section-author {
+    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--navy2);
+    position: relative;
+  }
+
+  .author-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(200,168,75,0.1);
+  }
+
+  .cred-icon {
+    color: var(--gold);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cred-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(245,242,236,0.7);
+  }
+
+  .cred-text strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .author-visual {
+    position: relative;
+  }
+
+  .author-photo-frame {
+    background: linear-gradient(135deg, rgba(200,168,75,0.1), rgba(200,168,75,0.02));
+    border: 1px solid rgba(200,168,75,0.2);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .author-badge {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 20px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* ── FINAL CTA ── */
+  .section-cta {
+    padding: 120px 80px;
+    text-align: center;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,168,75,0.05) 0%, transparent 70%);
+  }
+
+  .cta-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(48px, 6vw, 80px);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .cta-sub {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(245,242,236,0.5);
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+    letter-spacing: 3px;
+    padding: 18px 36px;
+    border: 1px solid rgba(245,242,236,0.2);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 80px;
+    border-top: 1px solid rgba(200,168,75,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: var(--gold);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 1px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 100px 30px 40px; }
+    .hero-right { padding: 20px 30px 60px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .section-author { grid-template-columns: 1fr; }
+    .section-why, .section-quote, .section-author, .section-cta, footer { padding: 60px 30px; }
+    .hero-stats { gap: 24px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-kicker { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-title { animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-subtitle { animation: fadeUp 0.6s ease 0.3s both; }
+  .hero-stats { animation: fadeUp 0.6s ease 0.4s both; }
+  .btn-primary { animation: fadeUp 0.6s ease 0.5s both; }
+  .hero-right { animation: fadeUp 0.7s ease 0.3s both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">EARN THE TAB</div>
+  <div class="nav-tagline">The International Ranger School Guide</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-left">
+    <div class="hero-kicker">Class 07-22 · NATO Allied Graduate</div>
+
+    <h1 class="hero-title">
+      EARN<br>
+      THE <span class="gold">TAB</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      The only Ranger School survival guide written by a non-American graduate.<br>
+      62 days. 3 phases. One decision that changes everything.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">62</span>
+        <span class="stat-label">Days of course</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">40%</span>
+        <span class="stat-label">Graduate rate</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">150</span>
+        <span class="stat-label">Pages of intel</span>
+      </div>
+    </div>
+
+    <a href="#buy" class="btn-primary">
+      GET THE BOOK <span class="btn-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="hero-right">
+    <!-- BOOK COVER -->
+    <div class="book-display">
+      <div class="book-cover-wrap">
+        <img id="bookCoverImg" src="covers/cover-en.jpg" alt="Earn the Tab — Ranger School Survival Guide by Renee Aluste" width="200" height="320" />
+      </div>
+      <!-- Flag row showing available languages -->
+      <div class="flag-row" id="flagRow">
+        <div class="flag-item avail" data-index="0"><span class="flag-emoji"><img src="https://flagcdn.com/w40/us.png" alt="US"></span><div class="flag-dot"></div></div>
+        <div class="flag-item" data-index="1"><span class="flag-emoji"><img src="https://flagcdn.com/w40/ee.png" alt="EE"></span><div class="flag-dot"></div></div>
+        <div class="flag-item avail" data-index="2"><span class="flag-emoji"><img src="https://flagcdn.com/w40/de.png" alt="DE"></span><div class="flag-dot"></div></div>
+        <div class="flag-item avail" data-index="3"><span class="flag-emoji"><img src="https://flagcdn.com/w40/pl.png" alt="PL"></span><div class="flag-dot"></div></div>
+        <div class="flag-item avail" data-index="4"><span class="flag-emoji"><img src="https://flagcdn.com/w40/fr.png" alt="FR"></span><div class="flag-dot"></div></div>
+        <div class="flag-item" data-index="5"><span class="flag-emoji"><img src="https://flagcdn.com/w40/no.png" alt="NO"></span><div class="flag-dot"></div></div>
+        <div class="flag-item" data-index="6"><span class="flag-emoji"><img src="https://flagcdn.com/w40/se.png" alt="SE"></span><div class="flag-dot"></div></div>
+        <div class="flag-item" data-index="7"><span class="flag-emoji"><img src="https://flagcdn.com/w40/dk.png" alt="DK"></span><div class="flag-dot"></div></div>
+        <div class="flag-item" data-index="8"><span class="flag-emoji"><img src="https://flagcdn.com/w40/es.png" alt="ES"></span><div class="flag-dot"></div></div>
+      </div>
+    </div>
+
+    <!-- LANGUAGE CAROUSEL -->
+    <div class="carousel-wrapper" id="buy">
+      <div class="carousel-label">Select your language</div>
+
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carouselTrack">
+
+          <!-- 0: ENGLISH -->
+          <div class="language-card" data-cover="covers/cover-en.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇺🇸</div>
+              <div class="lang-info">
+                <div class="lang-name">ENGLISH</div>
+                <div class="lang-title">Earn the Tab</div>
+                <div class="lang-formats">
+                  <a href="https://www.amazon.com/dp/B0DKPJ73S4" class="lang-format-link" target="_blank" rel="noopener">Kindle</a>
+                  <a href="https://www.amazon.com/dp/B0GVYXRGNN" class="lang-format-link" target="_blank" rel="noopener">Paperback</a>
+                  <a href="https://www.amazon.com/dp/B0GYL382LX" class="lang-format-link" target="_blank" rel="noopener">Hardcover</a>
+                </div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge available">Available</span>
+              <a href="https://www.amazon.com/dp/B0DKPJ73S4" class="lang-buy-btn" target="_blank" rel="noopener">BUY $9.99 →</a>
+            </div>
+          </div>
+
+          <!-- 1: EESTI -->
+          <div class="language-card" data-cover="covers/cover-en.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇪🇪</div>
+              <div class="lang-info">
+                <div class="lang-name">EESTI</div>
+                <div class="lang-title">Teeni Tab</div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge coming">Coming Soon</span>
+              <span class="lang-buy-btn disabled">PEAGI →</span>
+            </div>
+          </div>
+
+          <!-- 2: DEUTSCH -->
+          <div class="language-card" data-cover="covers/cover-de.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇩🇪</div>
+              <div class="lang-info">
+                <div class="lang-name">DEUTSCH</div>
+                <div class="lang-title">Verdiene das Abzeichen</div>
+                <div class="lang-formats">
+                  <a href="https://www.amazon.de/dp/B0GNT5WF2K" class="lang-format-link" target="_blank" rel="noopener">Kindle</a>
+                  <a href="https://www.amazon.de/dp/B0GWD2C4QG" class="lang-format-link" target="_blank" rel="noopener">Taschenbuch</a>
+                  <a href="https://www.amazon.de/dp/B0GWHKV7VV" class="lang-format-link" target="_blank" rel="noopener">Gebunden</a>
+                </div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge available">Available</span>
+              <a href="https://www.amazon.de/dp/B0GWD2C4QG" class="lang-buy-btn" target="_blank" rel="noopener">KAUFEN €25.06 →</a>
+            </div>
+          </div>
+
+          <!-- 3: POLSKI -->
+          <div class="language-card" data-cover="covers/cover-pl.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇵🇱</div>
+              <div class="lang-info">
+                <div class="lang-name">POLSKI</div>
+                <div class="lang-title">Zasłuż na Naszywkę</div>
+                <div class="lang-formats">
+                  <a href="https://www.amazon.pl/dp/B0GWH42GCX" class="lang-format-link" target="_blank" rel="noopener">Miękka</a>
+                  <a href="https://www.amazon.pl/dp/B0GWHKPFM6" class="lang-format-link" target="_blank" rel="noopener">Twarda</a>
+                </div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge available">Available</span>
+              <a href="https://www.amazon.pl/dp/B0GWH42GCX" class="lang-buy-btn" target="_blank" rel="noopener">KUP 97,64 zł →</a>
+            </div>
+          </div>
+
+          <!-- 4: FRANÇAIS -->
+          <div class="language-card" data-cover="covers/cover-fr.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇫🇷</div>
+              <div class="lang-info">
+                <div class="lang-name">FRANÇAIS</div>
+                <div class="lang-title">Gagner le Tab 2026</div>
+                <div class="lang-formats">
+                  <a href="https://www.amazon.fr/dp/B0GHMMLK4W" class="lang-format-link" target="_blank" rel="noopener">Kindle</a>
+                  <a href="https://www.amazon.fr/dp/B0GWHV8JQL" class="lang-format-link" target="_blank" rel="noopener">Broché</a>
+                  <a href="https://www.amazon.fr/dp/B0GWHSLRQB" class="lang-format-link" target="_blank" rel="noopener">Relié</a>
+                </div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge available">Available</span>
+              <a href="https://www.amazon.fr/dp/B0GWHV8JQL" class="lang-buy-btn" target="_blank" rel="noopener">ACHETER €26.36 →</a>
+            </div>
+          </div>
+
+          <!-- 5: NORSK -->
+          <div class="language-card" data-cover="covers/cover-en.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇳🇴</div>
+              <div class="lang-info">
+                <div class="lang-name">NORSK</div>
+                <div class="lang-title">Tjen Ranger Tab</div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge coming">Coming Soon</span>
+              <span class="lang-buy-btn disabled">SNART →</span>
+            </div>
+          </div>
+
+          <!-- 6: SVENSKA -->
+          <div class="language-card" data-cover="covers/cover-en.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇸🇪</div>
+              <div class="lang-info">
+                <div class="lang-name">SVENSKA</div>
+                <div class="lang-title">Tjäna Ranger Tab</div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge coming">Coming Soon</span>
+              <span class="lang-buy-btn disabled">SNART →</span>
+            </div>
+          </div>
+
+          <!-- 7: DANSK -->
+          <div class="language-card" data-cover="covers/cover-en.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇩🇰</div>
+              <div class="lang-info">
+                <div class="lang-name">DANSK</div>
+                <div class="lang-title">Tjen Ranger Tab</div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge coming">Coming Soon</span>
+              <span class="lang-buy-btn disabled">SNART →</span>
+            </div>
+          </div>
+
+          <!-- 8: ESPAÑOL -->
+          <div class="language-card" data-cover="covers/cover-en.jpg">
+            <div class="lang-left">
+              <div class="lang-flag">🇪🇸</div>
+              <div class="lang-info">
+                <div class="lang-name">ESPAÑOL</div>
+                <div class="lang-title">Gana la Pestaña Ranger</div>
+              </div>
+            </div>
+            <div class="lang-status">
+              <span class="status-badge coming">Coming Soon</span>
+              <span class="lang-buy-btn disabled">PRONTO →</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous language">←</button>
+        <div class="carousel-dots" id="dotsContainer"></div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next language">→</button>
+      </div>
+    </div>
+
+    <div class="credential-strip">
+      <span class="cred-tag">Ranger Tab</span>
+      <span class="cred-tag">Class 07-22</span>
+      <span class="cred-tag">Estonian Defence Forces</span>
+      <span class="cred-tag">Combat Ready OÜ</span>
+      <span class="cred-tag">NCO of the Year</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section-quote">
+  <div class="quote-rule"></div>
+  <div class="quote-content">
+    <p class="quote-text">"Are you going back with an excuse or with a TAB?"</p>
+    <div class="quote-attr">— Florida barracks toilet wall</div>
+  </div>
+</section>
+
+<!-- WHY THIS BOOK -->
+<section class="section-why">
+  <div class="section-label">What makes this different</div>
+  <h2 class="section-title">NO OTHER BOOK COVERS THIS</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div class="why-heading">The International Soldier's Edge</div>
+      <p class="why-body">Written by the only non-American to document Ranger School from the inside. What IMSO never tells you. How to navigate as a foreigner from Day 0.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div class="why-heading">Peer Evaluation Strategy</div>
+      <p class="why-body">The system that can end your course — and no guide explains it. How it actually works, how to survive it, and why a Peer Scheme is an automatic drop.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div class="why-heading">Real-Time Field Account</div>
+      <p class="why-body">Reconstructed from notes made in planning bays and patrol bases. Not written years later. The details no one remembers — because they slept 3.5 hours a night.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <div class="why-heading">The Recycle Decision Framework</div>
+      <p class="why-body">A systematic mental framework for the hardest decision in Ranger School. The 48-hour rule. The decision matrix. What changes and what doesn't.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">05</div>
+      <div class="why-heading">Sleep Deprivation Science</div>
+      <p class="why-body">What actually happens to your brain after 48 hours without sleep. The caffeine protocol. The guardian system. Why the hallucinations are normal.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">06</div>
+      <div class="why-heading">Leadership Capital</div>
+      <p class="why-body">Built on Extreme Ownership principles. How to earn the right to lead in 14 days from zero — and how to spend it without burning it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="section-author">
+  <div>
+    <div class="section-label">About the author</div>
+    <h2 class="section-title">RENEE<br>ALUSTE</h2>
+    <div class="author-credentials">
+      <div class="cred-item">
+        <span class="cred-icon">★</span>
+        <div class="cred-text"><strong>Ranger Tab Graduate</strong> — Class 07-22, U.S. Army Ranger School. One of a handful of Estonian soldiers ever invited to attempt the course.</div>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">★</span>
+        <div class="cred-text"><strong>NCO of the Year</strong> — Estonian Defence Forces. First NCO from the Defence League to receive this award.</div>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">★</span>
+        <div class="cred-text"><strong>Combat Ready OÜ</strong> — Echelon Front partner. Brings Jocko Willink's Extreme Ownership methodology to Estonia and Europe.</div>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">★</span>
+        <div class="cred-text"><strong>UN Peacekeeper</strong> — Lebanon 2015. Special Operations qualified. Hungarian SOF exchange graduate.</div>
+      </div>
+    </div>
+  </div>
+  <div class="author-visual">
+    <div class="author-photo-frame">
+      <img src="notfortheweak.jpg" alt="Renee Aluste at Ranger School" style="width:100%; display:block; object-fit:cover; max-height:420px;" />
+    </div>
+    <div class="author-badge">
+      RANGER<br>TAB<br>07-22
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-cta">
+  <h2 class="cta-title">THE TAB<br>IS <span style="color:var(--gold)">EARNED.</span></h2>
+  <p class="cta-sub">Select your language. Get the book. Start preparing.</p>
+  <div class="cta-buttons">
+    <a href="#buy" class="btn-primary">SELECT LANGUAGE <span class="btn-arrow">↑</span></a>
+    <a href="mailto:renee@combatready.ee" class="btn-secondary">CONTACT AUTHOR</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">EARN THE TAB</div>
+  <div class="footer-links">
+    <a href="https://www.amazon.com/dp/B0DKPJ73S4" target="_blank" rel="noopener">Amazon KDP</a>
+    <a href="https://www.combatready.eu" target="_blank" rel="noopener">Combat Ready OÜ</a>
+    <a href="mailto:renee@combatready.ee">Contact</a>
+    <a href="https://www.combatready.eu" target="_blank" rel="noopener">combatready.eu</a>
+  </div>
+  <div class="footer-copy">© 2026 Renee Aluste · combatready.eu</div>
+</footer>
+
+<script>
+  const track = document.getElementById('carouselTrack');
+  const cards = track.querySelectorAll('.language-card');
+  const dotsContainer = document.getElementById('dotsContainer');
+  const flagItems = document.querySelectorAll('#flagRow .flag-item');
+  const bookCoverImg = document.getElementById('bookCoverImg');
+  let current = 0;
+  const total = cards.length;
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    cards[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    if (flagItems[current]) flagItems[current].classList.remove('active');
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    cards[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+    if (flagItems[current]) flagItems[current].classList.add('active');
+    const newCover = cards[current].dataset.cover;
+    if (newCover && bookCoverImg && bookCoverImg.getAttribute('src') !== newCover) {
+      bookCoverImg.setAttribute('src', newCover);
+    }
+  }
+
+  cards[0].classList.add('active');
+  if (flagItems[0]) flagItems[0].classList.add('active');
+
+  document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+
+  flagItems.forEach(f => {
+    f.addEventListener('click', () => goTo(parseInt(f.dataset.index, 10)));
+  });
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => startX = e.touches[0].clientX, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+  });
+</script>
+
+</body>
+</html>
